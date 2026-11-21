@@ -65,6 +65,76 @@ h1{font-size:clamp(23px,3vw,34px);font-weight:normal;line-height:1.06;margin:7px
 .footer{height:24px;flex-shrink:0;text-align:center;color:#d4ad58;font:9px Arial,sans-serif;letter-spacing:2px;padding-bottom:5px}
 @media(max-width:760px){body{padding:8px}.app{min-height:calc(100vh - 16px)}.top{height:108px;padding-left:80px}.sun{left:13px;width:48px;height:48px}.flag{width:80px}.brand{font-size:25px}.tag{font-size:8px;letter-spacing:1.7px}.tools{margin-top:12px}.main{grid-template-columns:1fr;grid-template-rows:145px minmax(280px,1fr);padding:10px;gap:10px}.sidebar{min-height:0}.sidehead{padding:8px 10px}.region-list{display:flex;overflow-x:auto;overflow-y:hidden;gap:6px;padding:7px}.region{width:145px;min-width:145px;padding:7px}.region .num{width:22px;height:22px}.region .rname{font-size:10px}.map-frame{min-height:290px}.info{grid-template-columns:1fr}.info-side{display:grid;grid-template-columns:1fr 1fr}.info-side .fact:nth-child(3){border:0}.tower{display:none}.map-foot{font-size:9px}}
 @media(min-width:761px){.map-area{min-height:390px}.sidebar{grid-row:1 / span 2}.main{grid-template-rows:minmax(360px,1fr) auto}.info{padding-top:0}}
+
+/* Mobile-first, standard-phone layout */
+html,body{width:100%;height:100%;min-height:100%;}
+body{display:block;padding:0;background:#07142f;}
+.app{width:100%;max-width:480px;height:100dvh;min-height:0;margin:0 auto;border:1px solid var(--gold);box-shadow:none;display:flex;overflow:hidden;}
+.top{height:88px;min-height:88px;padding:10px 72px 8px 67px;}
+.sun{left:10px;top:15px;width:43px;height:43px;}
+.brand{font-size:clamp(20px,5.5vw,27px);white-space:nowrap;letter-spacing:.4px;}
+.tag{font-size:7px;letter-spacing:1px;white-space:nowrap;margin-top:4px;}
+.flag{width:68px;}
+.tools{margin-top:8px;gap:6px;}
+.search{padding:7px 11px;font-size:11px;max-width:none;min-width:0;}
+.count{font-size:8px;}
+.main{display:flex;flex-direction:column;gap:0;padding:0;flex:1;min-height:0;overflow:hidden;}
+.sidebar{order:0;flex:0 0 auto;min-height:0;border:0;border-bottom:1px solid #b88c36;z-index:5;}
+.sidehead{height:38px;min-height:38px;width:100%;display:flex;align-items:center;gap:7px;padding:0 13px;background:#0b2858;border:0;color:var(--gold);font:10px Arial,sans-serif;letter-spacing:1.1px;text-align:left;cursor:pointer;}
+#selectedRegionLabel{margin-left:auto;color:#fff0c9;font-size:10px;letter-spacing:0;text-transform:none;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.chevron{font-size:16px;margin-left:3px;}
+.region-list{display:none;position:absolute;top:38px;left:0;right:0;max-height:48dvh;overflow:auto;background:#091c42;border:1px solid var(--gold);padding:7px;z-index:20;box-shadow:0 12px 22px #0008;display:none;grid-template-columns:1fr 1fr;gap:4px;}
+.sidebar.open .region-list{display:grid;}
+.region{min-width:0;width:100%;padding:7px 6px;gap:6px;border:1px solid #263d64;font-size:10px;}
+.region .num{width:20px;height:20px;font-size:8px;}
+.region .rname{font-size:9px;line-height:1.2;}
+.region .arrow{display:none;}
+.map-area{order:1;flex:1 1 auto;min-height:0;border-left:0;border-right:0;border-top:0;display:flex;}
+.map-top{height:30px;min-height:30px;padding:0 10px;font-size:8px;letter-spacing:1px;}
+.map-frame{flex:1;min-height:0;height:auto;}
+.map-frame iframe{height:100%;min-height:0;}
+.pin-label{top:9px;left:9px;padding:7px 9px;font-size:8px;max-width:80%;}
+.map-foot{min-height:25px;padding:6px 9px;font-size:8px;}
+.info{order:2;display:block;flex:0 0 auto;max-height:31dvh;overflow:auto;padding:0;background:#091c42;}
+.info-main{border:0;border-top:1px solid #a9823d;padding:12px 14px 10px;}
+.kicker{font-size:8px;letter-spacing:1.4px;}
+h1{font-size:23px;margin:5px 0 3px;}
+.place-meta{font-size:10px;margin-bottom:7px;}
+.description{font-size:11px;line-height:1.45;}
+.actions{margin-top:9px;}
+.btn{padding:8px 11px;font-size:9px;}
+.info-side{display:grid;grid-template-columns:1fr 1fr;gap:8px;border:0;border-top:1px solid #324768;padding:9px 14px 12px;}
+.fact{padding:0 0 7px;border:0;}
+.fact b{font-size:8px;margin-bottom:3px;}
+.fact span{font-size:10px;line-height:1.35;}
+.footer{height:17px;min-height:17px;font-size:7px;padding:3px 0;}
+.bottom-art{height:10px;}
+.tower{display:none;}
+@media(min-width:600px){body{display:flex;justify-content:center;align-items:center;padding:18px 0}.app{height:min(900px,calc(100dvh - 36px));border:2px solid var(--gold);box-shadow:0 20px 70px #0009;}.map-area{min-height:0;}}
+@media(max-height:700px){.top{height:78px;min-height:78px}.info{max-height:29dvh}.map-top{height:26px;min-height:26px;}}
+
+
+/* Final mobile map-priority layout */
+.top{height:80px;min-height:80px;padding-top:8px;padding-bottom:6px;}
+.tools{margin-top:6px;}
+.search{width:100%;}
+.map-area{flex:1 1 auto;min-height:0;}
+.map-top{height:25px;min-height:25px;}
+.map-frame{flex:1 1 auto;min-height:0;}
+.map-frame iframe{width:100%;height:100%;min-height:0;}
+.map-foot,.info-side,.count{display:none!important;}
+.info{flex:0 0 auto;max-height:18dvh;overflow:auto;padding:0;}
+.info-main{padding:8px 12px 9px;border-top:1px solid #a9823d;}
+.kicker{font-size:7px;margin:0;}
+h1{font-size:20px;margin:3px 0 2px;}
+.place-meta{font-size:9px;margin-bottom:4px;}
+.description{font-size:10px;line-height:1.35;}
+.actions{margin-top:6px;}
+.btn{padding:7px 10px;font-size:8px;}
+.footer{display:none;}
+.bottom-art{height:7px;}
+@media(max-height:700px){.top{height:72px;min-height:72px}.info{max-height:20dvh}.map-top{height:22px;min-height:22px;}}
+
 </style>
 </head>
 <body>
@@ -72,11 +142,11 @@ h1{font-size:clamp(23px,3vw,34px);font-weight:normal;line-height:1.06;margin:7px
 <header class="top">
  <div class="sun"></div><div class="brand">HIYAS PILIPINAS</div>
  <div class="tag">TUKLASIN ANG PAMANA · KILALANIN ANG KULTURA</div><div class="flag"></div>
- <div class="tools"><input id="search" class="search" placeholder="⌕  Search a region or destination..." aria-label="Search regions"><span class="count" id="count">18 HERITAGE DESTINATIONS</span></div>
+ <div class="tools"><input id="search" class="search" placeholder="⌕  Search a region or destination..." aria-label="Search regions"></div>
 </header>
 <main class="main">
- <aside class="sidebar">
-  <div class="sidehead">✦ &nbsp; EXPLORE THE 18 REGIONS</div>
+ <aside class="sidebar" id="sidebar">
+  <button class="sidehead" id="regionToggle" type="button" aria-expanded="false">✦ &nbsp; EXPLORE A REGION <span id="selectedRegionLabel">NCR · Intramuros</span> <span class="chevron">⌄</span></button>
   <div class="region-list" id="regionList"></div>
  </aside>
  <section class="map-area">
@@ -85,23 +155,14 @@ h1{font-size:clamp(23px,3vw,34px);font-weight:normal;line-height:1.06;margin:7px
    <div class="pin-label" id="pinLabel">● &nbsp; INTRAMUROS · MANILA</div>
    <iframe id="map" title="Google Maps heritage destination" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
   </div>
-  <div class="map-foot"><span>GOOGLE MAPS · FEATURED HERITAGE SITE</span><span id="coordinates">14.5896° N, 120.9747° E</span></div>
  </section>
  <section class="info">
   <div class="info-main">
    <div class="kicker" id="regionKicker">NCR · NATIONAL CAPITAL REGION</div>
    <h1 id="placeName">Intramuros</h1><div class="place-meta" id="placeMeta">Manila, Metro Manila, Philippines</div>
    <p class="description" id="description"></p>
-   <div class="did"><b>✦ DID YOU KNOW?</b><span id="did"></span></div>
-   <div class="actions"><button class="btn" id="visitBtn">EXPLORE WHAT TO VISIT</button><a class="btn alt" id="directions" target="_blank" rel="noopener">GET DIRECTIONS ↗</a></div>
-   <div class="visit-panel" id="visitPanel"><h3>PLACES TO EXPLORE</h3><div class="visit-list" id="visitList"></div></div>
+   <div class="actions"><a class="btn" id="directions" target="_blank" rel="noopener">OPEN IN GOOGLE MAPS ↗</a></div>
   </div>
-  <aside class="info-side">
-   <div class="fact"><b>⌖ LOCATION</b><span id="address"></span></div>
-   <div class="fact"><b>◷ OPENING HOURS</b><span id="hours"></span></div>
-   <div class="fact"><b>₱ ENTRANCE FEE</b><span id="fee"></span></div>
-   <div class="fact"><b>✦ FOOD YOU MUST TRY</b><span id="food"></span></div>
-  </aside>
  </section>
 </main>
 <div class="tower" aria-hidden="true"><svg viewBox="0 0 60 250" fill="none" stroke="#e7bc63" stroke-width="2"><path d="M7 250V80L17 62V38L30 8L43 38V62L53 80V250M7 80H53M17 62H43M17 38H43M22 250V100H38V250M20 120H40M20 160H40M20 200H40M24 38V20H36V38M26 20V8H34V20"/><path d="M27 250V215Q30 190 33 215V250M22 100V125M38 100V125M22 145V170M38 145V170M22 185V210M38 185V210"/></svg></div>
@@ -118,26 +179,23 @@ function mapUrl(r){return (r.mapEmbed && r.mapEmbed.trim()) ? r.mapEmbed : 'http
 function renderList(filter=''){
  const list=$('regionList');list.innerHTML='';
  const filtered=REGIONS.filter(r=>(r.region+' '+r.short+' '+r.place+' '+r.city).toLowerCase().includes(filter.toLowerCase()));
- filtered.forEach((r)=>{const b=document.createElement('button');b.className='region'+(r.id===selected.id?' active':'');b.innerHTML='<span class="num">'+String(REGIONS.indexOf(r)+1).padStart(2,'0')+'</span><span class="rname">'+r.region+'</span><span class="arrow">›</span>';b.addEventListener('click',()=>selectRegion(r.id));list.appendChild(b)});
- $('count').textContent=filtered.length+' OF 18 REGIONS';
+ filtered.forEach((r)=>{const b=document.createElement('button');b.className='region'+(r.id===selected.id?' active':'');b.innerHTML='<span class="num">'+String(REGIONS.indexOf(r)+1).padStart(2,'0')+'</span><span class="rname">'+r.region+' · '+r.place+'</span>';b.addEventListener('click',()=>{selectRegion(r.id);$('sidebar').classList.remove('open');$('regionToggle').setAttribute('aria-expanded','false')});list.appendChild(b)});
  if(!filtered.length)list.innerHTML='<div style="padding:15px;color:#d8c18b;font:12px Arial">No matching region found.</div>';
 }
 function selectRegion(id){
  selected=REGIONS.find(r=>r.id===id)||REGIONS[0];
  $('map').src=mapUrl(selected);$('mapRegion').textContent=selected.short+' · '+selected.region.toUpperCase();
  $('pinLabel').textContent='●  '+selected.place.toUpperCase()+' · '+selected.city.toUpperCase();
- $('coordinates').textContent=selected.lat.toFixed(4)+'° N, '+selected.lng.toFixed(4)+'° E';
  $('regionKicker').textContent=selected.short+' · '+selected.region.toUpperCase();
+ $('selectedRegionLabel').textContent=selected.short+' · '+selected.place;
  $('placeName').textContent=selected.place;$('placeMeta').textContent=selected.city+', Philippines';
- $('description').textContent=selected.description;$('did').textContent=selected.did;
- $('address').textContent=selected.address;$('hours').textContent=selected.hours;$('fee').textContent=selected.fee;$('food').textContent=selected.food;
+ $('description').textContent=selected.description;
  $('directions').href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(selected.address);
- $('visitList').innerHTML='';selected.visits.forEach(v=>{const s=document.createElement('span');s.textContent=v;$('visitList').appendChild(s)});
- $('visitPanel').classList.remove('show');$('visitBtn').textContent='EXPLORE WHAT TO VISIT';
  renderList($('search').value);
 }
-$('search').addEventListener('input',e=>renderList(e.target.value));
-$('visitBtn').addEventListener('click',()=>{const p=$('visitPanel');p.classList.toggle('show');$('visitBtn').textContent=p.classList.contains('show')?'HIDE PLACES TO VISIT':'EXPLORE WHAT TO VISIT'});
+$('search').addEventListener('input',e=>{renderList(e.target.value);$('sidebar').classList.add('open')});
+$('regionToggle').addEventListener('click',()=>{const open=$('sidebar').classList.toggle('open');$('regionToggle').setAttribute('aria-expanded',String(open))});
+document.addEventListener('click',e=>{if(!$('sidebar').contains(e.target)&&!$('search').contains(e.target)){$('sidebar').classList.remove('open');$('regionToggle').setAttribute('aria-expanded','false')}});
 selectRegion('ncr');
 </script>
 </body></html>
