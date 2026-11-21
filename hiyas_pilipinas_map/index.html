@@ -36,7 +36,7 @@ body{display:grid;place-items:center;padding:22px;background:radial-gradient(ell
 .map-top{height:42px;background:#0a214d;color:#f4d58b;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font:10px Arial,sans-serif;letter-spacing:1.6px}
 .map-frame{position:relative;flex:1;min-height:300px;background:#c8dfdf}
 .map-frame iframe{width:100%;height:100%;min-height:300px;border:0;display:block;filter:saturate(.88)}
-.pin-label{position:absolute;top:15px;left:15px;z-index:2;background:#071b45;color:#f8d77b;border:1px solid #d5a944;padding:9px 13px;border-radius:2px;font:10px Arial,sans-serif;letter-spacing:1px;box-shadow:0 3px 12px #0003;pointer-events:none}
+
 .map-foot{background:#0a214d;color:#d9c18a;padding:9px 14px;display:flex;justify-content:space-between;gap:10px;font:10px Arial,sans-serif}
 .info{display:grid;grid-template-columns:1.25fr .9fr;gap:14px;padding:14px 0 0}
 .info-main,.info-side{border:1px solid #a9823d;background:#0a204b;padding:15px 17px}
@@ -93,7 +93,7 @@ body{display:block;padding:0;background:#07142f;}
 .map-top{height:30px;min-height:30px;padding:0 10px;font-size:8px;letter-spacing:1px;}
 .map-frame{flex:1;min-height:0;height:auto;}
 .map-frame iframe{height:100%;min-height:0;}
-.pin-label{top:9px;left:9px;padding:7px 9px;font-size:8px;max-width:80%;}
+
 .map-foot{min-height:25px;padding:6px 9px;font-size:8px;}
 .info{order:2;display:block;flex:0 0 auto;max-height:31dvh;overflow:auto;padding:0;background:#091c42;}
 .info-main{border:0;border-top:1px solid #a9823d;padding:12px 14px 10px;}
@@ -152,7 +152,6 @@ h1{font-size:20px;margin:3px 0 2px;}
  <section class="map-area">
   <div class="map-top"><span>✦ &nbsp; HERITAGE LOCATION</span><span id="mapRegion">NATIONAL CAPITAL REGION</span></div>
   <div class="map-frame">
-   <div class="pin-label" id="pinLabel">● &nbsp; INTRAMUROS · MANILA</div>
    <iframe id="map" title="Google Maps heritage destination" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
   </div>
  </section>
@@ -185,7 +184,6 @@ function renderList(filter=''){
 function selectRegion(id){
  selected=REGIONS.find(r=>r.id===id)||REGIONS[0];
  $('map').src=mapUrl(selected);$('mapRegion').textContent=selected.short+' · '+selected.region.toUpperCase();
- $('pinLabel').textContent='●  '+selected.place.toUpperCase()+' · '+selected.city.toUpperCase();
  $('regionKicker').textContent=selected.short+' · '+selected.region.toUpperCase();
  $('selectedRegionLabel').textContent=selected.short+' · '+selected.place;
  $('placeName').textContent=selected.place;$('placeMeta').textContent=selected.city+', Philippines';
